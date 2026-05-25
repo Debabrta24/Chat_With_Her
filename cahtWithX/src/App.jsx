@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { FaSmile, FaPaperclip, FaMicrophone } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
 import { BsCheck2All } from "react-icons/bs";
-import img from "../src/assets/download.jpeg"
+import img from "../src/assets/download.jpeg";
 const App = () => {
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
@@ -52,15 +52,18 @@ const App = () => {
     }, 1000);
 
     try {
-      const response = await fetch("https://chat-with-her.onrender.com/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://chat-with-her.onrender.com/api/chat",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            message: currentMessage,
+          }),
         },
-        body: JSON.stringify({
-          message: currentMessage,
-        }),
-      });
+      );
 
       const data = await response.json();
       const aiMsg = {
@@ -105,7 +108,8 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 overflow-y-auto p-4 space-y-3">
+        {/* <div className="flex-1 overflow-y-auto p-4 space-y-3"> */}
+        <div className="flex-1 overflow-y-auto scrollbar-hide p-4 space-y-3">
           <div className="flex justify-center mb-4">
             <div className="bg-[#182229] text-gray-300 text-xs px-4 py-1 rounded-lg shadow">
               {getCurrentDate()}
