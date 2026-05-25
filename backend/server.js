@@ -5,7 +5,7 @@ app.use(express.json());
 require('dotenv').config()
 const cors = require("cors");
 app.use(cors({
-    origin:process.env.ORIGIN
+    origin: process.env.ORIGIN
 }));
 
 app.post("/api/chat", async (req, res) => {
@@ -23,6 +23,9 @@ app.post("/api/chat", async (req, res) => {
         });
     }
 });
-app.listen(process.env.PORT , () => {
+app.get("/", (req, res) => {
+    res.send("Server started")
+})
+app.listen(process.env.PORT, () => {
     console.log("server started")
 })
