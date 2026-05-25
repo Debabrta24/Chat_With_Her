@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='m-auto text-center bg-#25282b ' >This Project is created by Debabrata❤️</div>
+    <div className='m-auto text-center bg-[#111b21]' >This Project is created by Debabrata❤️</div>
   )
 }
 
