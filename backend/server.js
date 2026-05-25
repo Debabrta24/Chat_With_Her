@@ -24,7 +24,7 @@ app.post("/api/chat", async (req, res) => {
     }
 });
 app.get("/", (req, res) => {
-    res.send("Server started")
+    res.send("Server started perfectly")
 })
 app.listen(process.env.PORT, () => {
     console.log("server started")
